@@ -1,0 +1,179 @@
+.page-home {
+  .rec-cards.show-cards {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .rec-cards {
+    margin-top: 34px;
+    box-sizing: border-box;
+    padding-left: 53px;
+    transition: all 0.5s ease-in-out;
+    opacity: 0;
+    transform: translateY(100px);
+    .rec-card:hover {
+      transform: scale(1.05);
+      background: #fff;
+    }
+    .rec-card {
+      width: 330px;
+      background: rgba(255, 255, 255, 0.85);
+      margin-right: 30px;
+      margin-bottom: 30px;
+      border-radius: 4px;
+      float: left;
+      cursor: pointer;
+      transition: all 0.5s ease-in-out;
+      .rec-avatar {
+        text-align: center;
+        margin-top: 25px;
+        font-size: 36px;
+        line-height: 36px;
+      }
+      .rec-title {
+        text-align: center;
+        color: #aaa;
+        font-size: 16px;
+        margin-top: 9px;
+      }
+      .rec-content {
+        margin: 16px;
+        box-sizing: border-box;
+        background: 0 0 !important;
+        height: 210px;
+        overflow: hidden;
+      }
+    }
+  }
+  .search-wrap {
+    margin-top: 70px;
+    text-align: center;
+    .hide-cover .search-input-wrap-cover {
+      display: none;
+    }
+    .swiper-wrapper {
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 60px;
+      width: 1050px;
+      height: 110px;
+      overflow: hidden;
+      .ant-carousel .slick-list {
+        border-radius: 8px;
+      }
+      .ant-carousel .slick-dots-bottom {
+        bottom: 24px;
+      }
+      .ant-carousel .slick-dots li {
+        button {
+          width: 7px;
+          height: 7px;
+          background: #e5e5e5;
+          border-radius: 100%;
+          opacity: 1;
+          transition: all 0.5s;
+          margin: 0 2px;
+        }
+      }
+      .ant-carousel .slick-dots li.slick-active {
+        button {
+          background: #ff807f;
+        }
+      }
+      &-item {
+        width: 1050px;
+        height: 110px;
+        border-radius: 8px;
+        overflow: hidden;
+        img {
+          cursor: pointer;
+          width: 100%;
+          height: 100%;
+          max-height: 100%;
+        }
+      }
+    }
+    .search-input-wrap {
+      text-align: center;
+      position: relative;
+      width: 766px;
+      margin: 30px auto 0;
+      animation: home-fade 0.6s ease-in-out 1;
+      @keyframes home-fade {
+        0% {
+          opacity: 0;
+        }
+        20% {
+          opacity: 0.1;
+        }
+        70% {
+          opacity: 0.7;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      &:hover {
+        .search-input,
+        .search-tab-item.active {
+          border-color: #6974b3 !important;
+        }
+      }
+      .search-tab {
+        display: flex;
+        position: absolute;
+        top: -22px;
+        left: 30px;
+        z-index: 3;
+        &-item {
+          min-width: 38px;
+          height: 22px;
+          line-height: 20px;
+          padding: 0 6px;
+          box-sizing: border-box;
+          margin-right: 4px;
+          color: #ddd;
+          border: 1px solid transparent;
+          border-bottom: none;
+          border-radius: 4px 4px 0 0;
+          user-select: none;
+          cursor: pointer;
+          font-size: 12px;
+        }
+        .active {
+          border-color: rgba(34, 43, 95, 0.79);
+          background-image: linear-gradient(180deg, #202564 0, #0e1034 100%);
+        }
+      }
+      .icon-tag {
+        font-size: 14px;
+        color: #a6a5ad;
+        user-select: none;
+        cursor: default;
+      }
+      .search-input-wrap-cover {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        box-sizing: border-box;
+        padding-top: 12px;
+      }
+      .search-input {
+        height: 50px;
+        line-height: 50px;
+        border: 1px solid rgba(34, 43, 95, 0.79);
+        background: rgba(21, 24, 68, 0.5);
+        display: inline-block;
+        width: 100%;
+        color: #fff;
+        box-sizing: border-box;
+        border-radius: 40px;
+        text-align: left;
+        padding: 0 2em;
+        font-size: 18px !important;
+        transition: border 0.4s, background 0.4s;
+      }
+    }
+  }
+}
