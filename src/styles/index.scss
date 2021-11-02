@@ -23,10 +23,27 @@ body {
   margin: 0 auto;
 }
 
+img {
+  border: 0 none;
+  width: auto\9;
+  height: auto;
+  max-width: 100%;
+  vertical-align: top;
+  -ms-interpolation-mode: bicubic;
+}
+
 ol,
 ul {
   list-style-type: none;
   list-style-image: none;
+}
+
+p {
+  display: block;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
 }
 
 ul {

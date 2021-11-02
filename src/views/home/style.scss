@@ -14,9 +14,26 @@
       transform: scale(1.05);
       background: #fff;
     }
+    .rec-card:nth-child(1) {
+      background: #f9ffff;
+    }
+    .rec-card:nth-child(2) {
+      background: #ffffff;
+    }
+    .rec-card:nth-child(3) {
+      background: #fffbfb;
+    }
+    .rec-card:nth-child(4) {
+      background: #ffffff;
+    }
+    .rec-card:nth-child(5) {
+      background: #fffff7;
+    }
+    .rec-card:nth-child(6) {
+      background: #fdfff7;
+    }
     .rec-card {
       width: 330px;
-      background: rgba(255, 255, 255, 0.85);
       margin-right: 30px;
       margin-bottom: 30px;
       border-radius: 4px;
@@ -41,6 +58,11 @@
         background: 0 0 !important;
         height: 210px;
         overflow: hidden;
+        text-align: center;
+        img {
+          height: 100%;
+          width: 100%;
+        }
       }
     }
   }

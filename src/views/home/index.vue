@@ -23,15 +23,21 @@
       </div>
     </div>
     <div class="rec-cards wrap" :class="{ 'show-cards': loading }">
-      <div v-for="i in 6" :key="i" class="rec-card">
+      <div v-for="plugin in plugins" :key="plugin.name" class="rec-card">
         <div class="rec-avatar"><SmileOutlined /></div>
-        <div class="rec-title">{{ i }}</div>
-        <div class="rec-content">1</div>
+        <div class="rec-title">{{ plugin.name }}</div>
+        <div class="rec-content">
+          <img
+            src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png?1635840070625"
+            alt="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png?1635840070625"
+          />
+        </div>
       </div>
     </div>
   </div>
 </template>
 <script setup>
+import * as plugins from "../../../plugin/components";
 import { SmileOutlined } from "@ant-design/icons-vue";
 import { ref } from "vue";
 
