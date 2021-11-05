@@ -2,7 +2,6 @@ import { ref, watch } from "vue";
 
 // 配置
 const point = 80; // 生成的星星（点）的个数, 默认25个
-const lineColor = "rgba(0, 0, 0, 0.8)"; // 线的颜色
 const roundColor = "rgba(60, 59, 81, 0.8)"; // 星星的颜色
 
 // 动态参数
@@ -40,14 +39,15 @@ function drawCircle(context, x, y, r, moveX, moveY) {
 /**
  * 绘制线条
  */
-function drawLine(context, beginX, beginY, closeX, closeY, opacity) {
-  context.beginPath();
-  context.strokeStyle = `rgba(60, 59, 81, ${opacity})`;
-  context.moveTo(beginX, beginY);
-  context.lineTo(closeX, closeY);
-  context.closePath();
-  context.stroke();
-}
+// function drawLine(context, beginX, beginY, closeX, closeY, opacity) {
+//   context.beginPath();
+//   context.strokeStyle = `rgba(60, 59, 81, ${opacity})`;
+//   context.moveTo(beginX, beginY);
+//   context.lineTo(closeX, closeY);
+//   context.closePath();
+//   context.stroke();
+// }
+
 /**
  * 生成圆点数组
  */
@@ -59,12 +59,13 @@ function createCircleArr() {
         rangeRadom(docWidth.value, 0),
         rangeRadom(docHeight.value, 0),
         rangeRadom(15, 2),
-        rangeRadom(10, -10) / 40,
-        rangeRadom(10, -10) / 40
+        rangeRadom(10, -10) / 80,
+        rangeRadom(10, -10) / 80
       )
     );
   }
 }
+
 /**
  * 每一帧绘制
  */
@@ -78,28 +79,6 @@ function draw() {
       circleArr.value[i].y,
       circleArr.value[i].r
     );
-  }
-  // 循环绘制线
-  for (let i = 0; i < point; i++) {
-    for (let j = 0; j < point; j++) {
-      if (i + j < point) {
-        let A = Math.abs(circleArr.value[i + j].x - circleArr.value[i].x);
-        let B = Math.abs(circleArr.value[i + j].y - circleArr.value[i].y);
-        let lineLength = Math.sqrt(A * A + B * B);
-        let C = (1 / lineLength) * 7 - 0.009;
-        let lineOpacity = C > 0.03 ? 0.03 : C;
-        if (lineOpacity > 0) {
-          drawLine(
-            context.value,
-            circleArr.value[i].x,
-            circleArr.value[i].y,
-            circleArr.value[i + j].x,
-            circleArr.value[i + j].y,
-            lineOpacity
-          );
-        }
-      }
-    }
   }
 }
 
@@ -143,7 +122,6 @@ watch(canvasDom, (value) => {
     context.value = canvasDom.value.getContext("2d");
 
     // 设置线条和星星颜色
-    context.value.strokeStyle = lineColor;
     context.value.lineWidth = 1;
     context.value.fillStyle = roundColor;
 

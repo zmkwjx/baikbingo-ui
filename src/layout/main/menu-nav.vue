@@ -61,7 +61,7 @@ const onJump = (item) => {
 header {
   position: relative;
   z-index: 999;
-  background-color: rgba($color: #000000, $alpha: 0.1);
+  background-color: #090723;
   .site-nav {
     display: flex;
     height: 55px;

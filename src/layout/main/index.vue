@@ -1,6 +1,6 @@
 <template>
-  <div class="root">
-    <canvas ref="canvas" class="index-canvas" />
+  <div class="root" :class="{ home: isHome }">
+    <canvas v-if="isHome" ref="canvas" class="index-canvas" />
     <div class="wrapper">
       <MenuNav />
       <div class="main">
@@ -20,8 +20,24 @@ const canvas = ref(null);
 watch(canvas, (value) => {
   canvasDom.value = value;
 });
+
+// 监听路由
+import { useRoute, onBeforeRouteUpdate } from "vue-router";
+const route = useRoute();
+const isHome = ref(route.path === "/");
+onBeforeRouteUpdate((to) => {
+  isHome.value = to.path === "/";
+});
 </script>
 <style lang="scss">
+.home {
+  header {
+    background-color: unset !important;
+  }
+  .footer {
+    background: rgba(6, 6, 11, 0.2);
+  }
+}
 .root {
   .index-canvas {
     position: fixed;

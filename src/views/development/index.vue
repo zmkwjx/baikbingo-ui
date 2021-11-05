@@ -1,3 +1,7 @@
 <template>
-  <div style="color: red;">development</div>
+  <div class="page-development">111</div>
 </template>
+
+<style lang="scss">
+@import "./style.scss";
+</style>

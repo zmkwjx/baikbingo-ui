@@ -9,4 +9,5 @@ export const install = (app) => {
     }
   });
 };
+
 export default { install };

@@ -6,10 +6,7 @@
           <img width="106" src="/logo.svg" alt="iconfont Logo" />
         </div>
         <div class="foot-content">
-          阿里妈妈MUX倾力打造的矢量图标管理、交流平台。
-          <br />
-          设计师将图标上传到 iconfont
-          平台，用户可以自定义下载多种格式的icon，平台也可将图标转换为字体，便于前端工程师自由调整与调用。
+          BaikBingo-UI倾力打造的服务于企业的开源UI组件库
         </div>
         <div class="foot-copy-right">
           <p>©BaikBingo UI, powered by zmkjwx.</p>
@@ -30,20 +27,48 @@
       <div class="foot-right">
         <div class="links-title">友情链接</div>
         <ul class="links clearfix">
-          <li v-for="i in 10" :key="i">
-            <a href="//thx.github.io/" target="_blank">阿里巴巴 UED 官网</a>
+          <li v-for="item in links" :key="item.href">
+            <a :href="item.href" target="_blank">{{ item.name }}</a>
           </li>
         </ul>
         <div class="share-logos">
-          <a>as</a>
+          <a class="iconfont" href="mailto:zmkjwx@126.com" target="_blank">
+            <MailOutlined />
+          </a>
         </div>
       </div>
     </div>
   </div>
 </template>
+<script setup>
+import { MailOutlined } from "@ant-design/icons-vue";
+import { ref } from "vue";
+const links = ref([
+  {
+    name: "Github",
+    href: "https://github.com"
+  },
+  {
+    name: "Gitee",
+    href: "https://gitee.com/"
+  },
+  {
+    name: "Ant Design Vue",
+    href: "https://next.antdv.com/components/overview-cn/"
+  },
+  {
+    name: "Rollup",
+    href: "https://rollupjs.org/"
+  },
+  {
+    name: "Vite",
+    href: "https://cn.vitejs.dev/"
+  }
+]);
+</script>
 <style lang="scss">
 .footer {
-  background: rgba(6, 6, 11, 0.2);
+  background: rgba(6, 6, 11);
   position: relative;
   font-size: 12px;
   .wrap {
@@ -51,6 +76,18 @@
   }
   .share-logos {
     margin-top: 19px;
+    .iconfont {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      margin-right: 15px;
+      text-align: center;
+      line-height: 42px;
+      color: rgba(255, 255, 255, 0.3);
+      display: inline-block;
+      font-size: 26px;
+      text-indent: -1px;
+    }
     a {
       color: #60606d;
     }

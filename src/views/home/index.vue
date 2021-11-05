@@ -28,8 +28,8 @@
         <div class="rec-title">{{ plugin.name }}</div>
         <div class="rec-content">
           <img
-            src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png?1635840070625"
-            alt="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png?1635840070625"
+            src="https://gw.alipayobjects.com/zos/alicdn/GOM1KQ24O/Typography.svg"
+            alt=""
           />
         </div>
       </div>
