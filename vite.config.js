@@ -12,7 +12,8 @@ export default ({ mode }) => {
     plugins: [vue(), vueJsx(), eslintPlugin()],
     resolve: {
       alias: {
-        "@": path.resolve(__dirname, "./src")
+        "@": path.resolve(__dirname, "./src"),
+        "@plugin": path.resolve(__dirname, "./plugin")
       }
     },
     build: {

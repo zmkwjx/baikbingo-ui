@@ -37,16 +37,26 @@
   </div>
 </template>
 <script setup>
-import * as plugins from "../../../plugin/components";
 import { SmileOutlined } from "@ant-design/icons-vue";
-import { ref } from "vue";
+import { ref, watch } from "vue";
 
 // 缓存
 const loading = ref(false);
 setTimeout(() => (loading.value = true), 100);
 
+// 遍历组件库
+const plugins = ref([]);
+const requirePlugins = import.meta.globEager("../../../plugin/**/index.vue")
+Object.keys(requirePlugins).forEach((fileName) => {
+  const name = fileName.replace(/plugin\//g, "").replace(/\/index.vue/g, "").replace(/\..\//g, "");
+  plugins.value.push({
+    name: name,
+    path: `baikbingo-ui/plugin/${name}`
+  })
+})
+
 // 隐藏描述
-const desc = ref("搜索组件 12,212,123");
+const desc = ref(`搜索组件 ${plugins.value.length}`);
 const hide = ref(false);
 document.getElementById("app").onclick = () => {
   hide.value = false;
@@ -54,6 +64,9 @@ document.getElementById("app").onclick = () => {
 
 // 输入内容
 const search = ref(null);
+watch(search,  (value) => {
+  console.log(value);
+})
 
 // 广告
 const news = ref([
